@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.mystic.oceanworld.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ChangeFogDistanceMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
