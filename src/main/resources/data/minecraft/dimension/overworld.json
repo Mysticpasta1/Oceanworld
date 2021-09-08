@@ -7,7 +7,7 @@
       "name": "minecraft:overworld",
       "bedrock_roof_position": -10,
       "bedrock_floor_position": 0,
-      "sea_level": 230,
+      "sea_level": 232,
       "min_surface_level": 0,
       "disable_mob_generation": false,
       "noise_caves_enabled": true,

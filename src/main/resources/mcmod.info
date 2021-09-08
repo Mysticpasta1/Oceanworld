@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "oceanworld",
+    "name": "Oceanworld",
+    "description": "Flooded overworld for the Rustic Waters Modpack",
+    "version": "1.0.0",
+    "mcversion": "1.16.5",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["Mysticpasta1"],
+    "credits": "To Jay S for the commission",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

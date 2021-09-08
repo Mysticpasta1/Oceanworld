@@ -1,21 +1,22 @@
 package com.mystic.oceanworld.client.dimensionutil;
 
-import net.minecraft.util.Identifier;
+
+import net.minecraft.util.RegistryKey;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.dimension.DimensionOptions;
-import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.Dimension;
+import net.minecraft.world.DimensionType;
 
 public class DimensionUtil {
-    public RegistryKey<DimensionOptions> getOverworldKey(){
-        return RegistryKey.of(Registry.DIMENSION_KEY, getOverworldID());
+    public RegistryKey<Dimension> getOverworldKey(){
+        return RegistryKey.getOrCreateKey(Registry.DIMENSION_KEY, getOverworldID());
     }
 
     public RegistryKey<DimensionType> getOverworldDimensionType(){
-        return RegistryKey.of(Registry.DIMENSION_TYPE_KEY, getOverworldID());
+        return RegistryKey.getOrCreateKey(Registry.DIMENSION_TYPE_KEY, getOverworldID());
     }
 
-    public Identifier getOverworldID(){
-        return DimensionOptions.OVERWORLD.getValue();
+    public ResourceLocation getOverworldID(){
+        return Dimension.OVERWORLD.getLocation();
     }
 }

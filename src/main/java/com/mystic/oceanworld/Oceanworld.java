@@ -1,11 +1,12 @@
 package com.mystic.oceanworld;
 
-import net.fabricmc.api.ModInitializer;
+import com.mystic.oceanworld.client.OceanworldClient;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-public class Oceanworld implements ModInitializer {
-
-    @Override
-    public void onInitialize(){
-
-    }
+@Mod("oceanworld")
+public class Oceanworld  {
+    public Oceanworld(){
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(OceanworldClient::init);
+     }
 }

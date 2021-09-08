@@ -1,29 +1,27 @@
 package com.mystic.oceanworld.client;
 
 import com.mystic.oceanworld.client.dimensionutil.DimensionUtil;
-import io.github.waterpicker.openworlds.OpenWorlds;
-import net.fabricmc.api.ClientModInitializer;
-import net.minecraft.client.render.SkyProperties;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.dimension.DimensionOptions;
+import net.minecraft.client.world.DimensionRenderInfo;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
-@net.fabricmc.api.Environment(net.fabricmc.api.EnvType.CLIENT)
-public class OceanworldClient implements ClientModInitializer {
-    @Override
-    public void onInitializeClient() {
-        SkyProperties overworld = new SkyProperties(300.0F, true, SkyProperties.SkyType.NORMAL, false, false) {
+@OnlyIn(Dist.CLIENT)
+public class OceanworldClient{
+    public static void init(final FMLClientSetupEvent event) {
+
+        DimensionRenderInfo overworld = new DimensionRenderInfo(255.0F, true, DimensionRenderInfo.FogType.NORMAL, false, false) {
             @Override
-            public Vec3d adjustFogColor(Vec3d vector3d, float v) {
+            public Vector3d func_230494_a_(Vector3d vector3d, float v) {
                 return vector3d;
             }
 
             @Override
-            public boolean useThickFog(int i, int i1) {
+            public boolean func_230493_a_(int i, int i1) {
                 return false;
             }
         };
-        
-        OpenWorlds.registerSkyProperty(new DimensionUtil().getOverworldDimensionType(), overworld);
+        DimensionRenderInfo.field_239208_a_.put(new DimensionUtil().getOverworldID(), overworld);
     }
 }
